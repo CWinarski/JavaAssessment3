@@ -1,7 +1,6 @@
 package user_management;
 
 import org.junit.Test;
-import parsing_json.ElementCollectionInitializer;
 
 import java.io.IOException;
 
