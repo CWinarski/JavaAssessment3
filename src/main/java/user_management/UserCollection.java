@@ -5,10 +5,16 @@ import java.util.ArrayList;
 public class UserCollection extends ArrayList<User>{
 
     public User findById(int id) {
+        for (User user : this) {
+            if (user.getId() == id) return user;
+        }
         return null;
     }
 
     public User findByEmail(String email) {
+        for (User user : this){
+            if (user.getEmail().equals(email)) return user;
+        }
         return null;
     }
 

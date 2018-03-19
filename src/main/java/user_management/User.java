@@ -7,14 +7,20 @@ public class User {
     private String email;
     private long id;
     private String name;
-    private String password;
+    private Password password;
 
-
-    public User(String email, long id, String name, String password) {
+    public User(long id, String name,String email, Password password) {
         this.email = email;
         this.id = id;
         this.name = name;
         this.password = password;
+    }
+    public User( long id, String email,String name, String password) {
+        this.email = email;
+        this.id = id;
+        this.name = name;
+        this.password = new Password(password);
+
     }
 
     public String getEmail() {
@@ -41,17 +47,22 @@ public class User {
         this.name = name;
     }
 
-    public String getPassword() {
+    public Password getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(Password password) {
         this.password = password;
+    }
+
+    public void setPassword(String password){
+        this.password = new Password(password);
     }
 
     @Override
     public String toString() {
-        return null;
+        String formatUser = getName() + " - " + getEmail();
+        return formatUser;
     }
 
     @Override
